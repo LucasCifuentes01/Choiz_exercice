@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import localFont from "next/font/local";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Choiz",
@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={larsseit.className}>{children}</body>
+      <body className={`${larsseit.className} h-screen`}>{children}</body>
     </html>
   );
 }
