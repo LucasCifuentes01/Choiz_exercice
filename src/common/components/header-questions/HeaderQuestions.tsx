@@ -1,19 +1,19 @@
 import ArrowSVG from 'svg/ArrowSVG';
 import ChoizBlackLogoSVG from 'svg/ChoizBlackLogoSVG';
 import WhatsappSVG from 'svg/WhatsappSVG';
-import { useStepStore } from '../store/step.store';
-import { APP_PATHS } from '@/common/constants/app_paths';
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
-const HeaderQuestions = () => {
-  const { step, decrementStep } = useStepStore();
+interface IProps {
+  onBack?: () => void;
+}
+
+const HeaderQuestions = ({ onBack }: IProps) => {
+  const router = useRouter();
 
   const handleBackClick = () => {
-    if (step === 1) {
-      return redirect(APP_PATHS.WELCOME);
-    }
+    if (onBack) return onBack();
 
-    decrementStep();
+    router.back();
   };
 
   return (

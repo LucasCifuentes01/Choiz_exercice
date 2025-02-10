@@ -2,7 +2,6 @@ import CheckSVG from 'svg/CheckSVG';
 import { IQuestionOption } from '../models/question.model';
 import { useQuestionsStore } from '../store/questions.store';
 import { useStepStore } from '../store/step.store';
-import { useRef } from 'react';
 
 interface IProps extends IQuestionOption {
   isMultiple?: boolean;

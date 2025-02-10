@@ -2,6 +2,7 @@ import { API_PATHS } from '@/common/constants/api_paths';
 import { getApiTransport } from '@/settings/transport';
 import { IGetQuestionsSchema } from './models/getQuestions.model';
 import { IQuestionComplete } from './store/questions.store';
+import { IPostQuestionSchema } from './models/postQuestion.model';
 
 export const getQuestions = async (step: number) => {
   const url = `${API_PATHS.QUESTIONS.INDEX}/${step}`;
@@ -14,7 +15,11 @@ export const getQuestions = async (step: number) => {
 export const postQuestions = async (body: IQuestionComplete[]) => {
   const url = API_PATHS.QUESTIONS.INDEX;
 
-  const response = await getApiTransport().post(url, {
+  const response = await getApiTransport().post<{
+    recomendation: IPostQuestionSchema;
+  }>(url, {
     body,
   });
+
+  return response.data;
 };

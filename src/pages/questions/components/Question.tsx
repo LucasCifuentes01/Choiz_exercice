@@ -22,7 +22,6 @@ const Question = ({
   description,
   totalSteps,
 }: IProps) => {
-  const { mutate, isPending } = usePostQuestions();
   const { step: storeStep, incrementStep } = useStepStore();
   const { questions, addQuestion } = useQuestionsStore();
 
@@ -34,8 +33,8 @@ const Question = ({
   );
 
   const handleContinueClick = () => {
-    if (step === totalSteps) {
-      mutate(questions);
+    if (step === totalSteps - 2) {
+      redirect(APP_PATHS.RECOMENDATION);
     }
 
     incrementStep();
@@ -45,18 +44,11 @@ const Question = ({
     addQuestion({ id, value, step: storeStep });
   };
 
-  if (isPending)
-    return (
-      <div className='flex h-full w-full items-center justify-center'>
-        <Loading />
-      </div>
-    );
-
   return (
     <div>
-      <ProgressBar current={step} total={totalSteps + 1} />
+      <ProgressBar current={step} total={totalSteps} />
       <div className='mb-3 flex flex-col gap-1'>
-        <h1 className='text-primary_800 mt-4 text-l font-bold'> {title} </h1>
+        <h1 className='question-title'> {title} </h1>
         <p className='text-s text-secondary_300'> {description} </p>
       </div>
       <Options onChangeOption={handleChangeOption} {...options} />

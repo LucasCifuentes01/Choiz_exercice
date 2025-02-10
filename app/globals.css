@@ -10,4 +10,24 @@
   .option-selected {
     @apply border border-neutral_600 rounded-1 p-2 flex flex-row gap-1 items-center
   }
+
+  .question-title {
+    @apply text-primary_800 mt-4 text-l font-bold
+  }
+
+  .shadow-soft {
+    box-shadow: 0px 1px 34px 0px rgba(16, 24, 40, 0.08);
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+      display: none;
+  }
+ /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+}
 }

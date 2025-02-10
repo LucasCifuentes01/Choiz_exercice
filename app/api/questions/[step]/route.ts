@@ -19,7 +19,7 @@ export const GET = async (
   const step = (await params).step;
 
   const mockedResponse: ResponseData = {
-    totalSteps: mockedQuestions.length,
+    totalSteps: mockedQuestions.length + 2,
     question: mockedQuestions.find(
       (question) => question.step === Number(step),
     ),

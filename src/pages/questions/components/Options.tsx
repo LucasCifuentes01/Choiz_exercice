@@ -4,8 +4,10 @@ import {
   IQuestions,
   QuestionTypes,
 } from '../models/question.model';
-import SelectableOption from './SelectableOption';
-import TextOption from './TextOption';
+import dynamic from 'next/dynamic';
+
+const SelectableOption = dynamic(() => import('./SelectableOption'));
+const TextOption = dynamic(() => import('./TextOption'));
 
 interface IProps extends IQuestions {
   onChangeOption: ({ id, value }: { id: string; value: string }) => void;
