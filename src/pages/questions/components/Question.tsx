@@ -41,7 +41,7 @@ const Question = ({
   };
 
   const handleChangeOption = ({ id, value }: { id: string; value: string }) => {
-    addQuestion({ id, value, step: storeStep });
+    addQuestion({ id, value, step: storeStep, title });
   };
 
   return (

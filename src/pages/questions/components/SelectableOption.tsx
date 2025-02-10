@@ -22,7 +22,7 @@ const SelectableOption = ({
     ?.selectedOptions.find((opt) => opt.id === value);
 
   const handleSelectOption = () => {
-    onSelectOption({ id: value, value });
+    onSelectOption({ id: value, value: label });
   };
 
   return (

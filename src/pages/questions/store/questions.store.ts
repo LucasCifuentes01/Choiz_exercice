@@ -2,6 +2,7 @@ import { create } from 'zustand';
 
 export interface IQuestionComplete {
   step: number;
+  title: string;
   selectedOptions: { id: string; value: string }[];
 }
 
@@ -11,10 +12,12 @@ interface IStore {
     id,
     value,
     step,
+    title,
   }: {
     id: string;
     value: string;
     step: number;
+    title: string;
   }) => void;
 }
 
@@ -32,6 +35,7 @@ export const useQuestionsStore = create<IStore>((set) => ({
           questions[stepIndex] = {
             selectedOptions: [],
             step: question.step,
+            title: question.title,
           };
         }
         if (
@@ -57,6 +61,7 @@ export const useQuestionsStore = create<IStore>((set) => ({
       questions.push({
         selectedOptions: [],
         step: question.step,
+        title: question.title,
       });
       questions[questions.length - 1].selectedOptions.push({
         id: question.id,
