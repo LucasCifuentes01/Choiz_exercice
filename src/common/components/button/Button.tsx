@@ -6,21 +6,25 @@ const SolidButton = dynamic(() => import('./variants/SolidButton'));
 
 interface IProps extends PropsWithChildren {
   type: ButtonTypes;
+  disabled?: boolean;
   onClick: () => void;
 }
 
 interface IButtonVariants extends PropsWithChildren {
   onClick: () => void;
+  disabled?: boolean;
 }
 
 const buttonVariants = {
-  [ButtonTypes.SOLID]: ({ children, onClick }: IButtonVariants) => (
-    <SolidButton onClick={onClick}> {children} </SolidButton>
+  [ButtonTypes.SOLID]: ({ children, disabled, onClick }: IButtonVariants) => (
+    <SolidButton disabled={disabled} onClick={onClick}>
+      {children}
+    </SolidButton>
   ),
 };
 
-const Button = ({ children, type, onClick }: IProps) => {
-  return buttonVariants[type]?.({ children, onClick }) || null;
+const Button = ({ children, type, disabled, onClick }: IProps) => {
+  return buttonVariants[type]?.({ children, disabled, onClick }) || null;
 };
 
 export default Button;

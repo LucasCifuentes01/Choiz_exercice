@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+  .option {
+    @apply border border-neutral_300 rounded-1 p-2 flex flex-row gap-1 items-center
+  }
+  .option-selected {
+    @apply border border-neutral_600 rounded-1 p-2 flex flex-row gap-1 items-center
+  }
+}
