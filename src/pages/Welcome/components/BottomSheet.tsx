@@ -1,14 +1,15 @@
 'use client';
 
 import Button from '@/common/components/button/Button';
-import ClockSVG from '../../../../public/svg/ClockSVG';
 import { ButtonTypes } from '@/common/components/button/button.model';
-import { redirect } from 'next/navigation';
 import { APP_PATHS } from '@/common/constants/app_paths';
+import StepsList from './StepsList';
+import { useRouter } from 'next/navigation';
 
 const BottomSheet = () => {
+  const router = useRouter();
   const handleClick = () => {
-    redirect(APP_PATHS.QUESTIONS);
+    router.push(APP_PATHS.QUESTIONS);
   };
 
   return (
@@ -24,17 +25,12 @@ const BottomSheet = () => {
           Comienza tu tratamiento en tres pasos:
         </h2>
       </div>
-      <ul className='mb-3 mt-3 flex flex-col gap-2 text-s text-secondary_300'>
-        <li className='flex gap-2'>
-          Completa tu expediente médico
-          <span className='flex items-center gap-1 text-primary_300'>
-            <ClockSVG /> 2 min
-          </span>
-        </li>
-        <li>Explora las opciones de tratamiento</li>
-        <li>Paga y recibe tu tratamiento</li>
-      </ul>
-      <Button onClick={handleClick} type={ButtonTypes.SOLID}>
+      <StepsList />
+      <Button
+        id='home_continue_button'
+        onClick={handleClick}
+        type={ButtonTypes.SOLID}
+      >
         Continuar
       </Button>
     </div>

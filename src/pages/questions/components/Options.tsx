@@ -11,6 +11,7 @@ const MultiSelectOption = dynamic(() => import('./MultiSelectOption'));
 const TextOption = dynamic(() => import('./TextOption'));
 
 interface IProps extends IQuestions {
+  id?: string;
   onChangeOption: ({
     id,
     value,
@@ -23,6 +24,7 @@ interface IProps extends IQuestions {
 }
 
 interface IOptionsProps {
+  id?: string;
   option: IQuestionOption;
   onChangeOption: ({
     id,
@@ -39,18 +41,20 @@ const optionVariants: Record<
   QuestionTypes,
   (props: IOptionsProps) => JSX.Element
 > = {
-  [QuestionTypes.MULTIPLE]: ({ option, onChangeOption }) => (
+  [QuestionTypes.MULTIPLE]: ({ option, id, onChangeOption }) => (
     <MultiSelectOption
       onSelectOption={onChangeOption}
       key={option.value}
       isMultiple
+      id={id}
       {...option}
     />
   ),
-  [QuestionTypes.SINGLE]: ({ option, onChangeOption }) => (
+  [QuestionTypes.SINGLE]: ({ option, id, onChangeOption }) => (
     <SingleOption
       key={option.value}
       onSelectOption={onChangeOption}
+      id={id}
       {...option}
     />
   ),
@@ -62,7 +66,9 @@ const optionVariants: Record<
 const Options = ({ type, data, onChangeOption }: IProps) => {
   return (
     <div className='flex flex-col gap-2'>
-      {data.map((option) => optionVariants[type]({ option, onChangeOption }))}
+      {data.map((option, index) =>
+        optionVariants[type]({ option, id: `option-${index}`, onChangeOption }),
+      )}
     </div>
   );
 };

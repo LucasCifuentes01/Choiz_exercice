@@ -12,9 +12,10 @@ interface IProps extends IQuestionOption {
     value: string;
     optionsType: 'single' | 'multi';
   }) => void;
+  id?: string;
 }
 
-const SingleOption = ({ label, value, onSelectOption }: IProps) => {
+const SingleOption = ({ label, value, id, onSelectOption }: IProps) => {
   const { step } = useStepStore();
   const { questions } = useQuestionsStore();
 
@@ -28,6 +29,7 @@ const SingleOption = ({ label, value, onSelectOption }: IProps) => {
 
   return (
     <div
+      id={id}
       className={`${alreadyChecked ? 'option-selected' : 'option'} cursor-pointer`}
       onClick={handleSelectOption}
     >

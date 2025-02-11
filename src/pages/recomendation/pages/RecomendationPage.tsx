@@ -30,7 +30,7 @@ const RecomendationPage = () => {
       )}
       {!isPending && (
         <div className='flex flex-col gap-3'>
-          <h1 className='question-title'>
+          <h1 id='question-title' className='question-title'>
             Tratamiento recomendado en base a tus respuestas
           </h1>
           {data?.recomendation && (

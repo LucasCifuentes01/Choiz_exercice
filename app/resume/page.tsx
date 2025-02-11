@@ -30,7 +30,9 @@ const Resume = () => {
     <div className='p-2'>
       <HeaderQuestions />
       <ProgressBar total={1} current={1} />
-      <h1 className='question-title mb-3 mt-2'>Resumen</h1>
+      <h1 id='question-title' className='question-title mb-3 mt-2'>
+        Resumen
+      </h1>
       <div className='mb-3 flex flex-col gap-2'>
         {responses.map((response, index) => (
           <ResumeItems

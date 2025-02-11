@@ -4,6 +4,7 @@ import { useQuestionsStore } from '../store/questions.store';
 import { useStepStore } from '../store/step.store';
 
 interface IProps extends IQuestionOption {
+  id?: string;
   isMultiple?: boolean;
   onSelectOption: ({
     id,
@@ -20,6 +21,7 @@ const MultiSelectOption = ({
   isMultiple,
   label,
   value,
+  id,
   onSelectOption,
 }: IProps) => {
   const { step } = useStepStore();
@@ -35,6 +37,7 @@ const MultiSelectOption = ({
 
   return (
     <div
+      id={id}
       className={`${alreadyChecked ? 'option-selected' : 'option'} cursor-pointer`}
       onClick={handleSelectOption}
     >

@@ -1,3 +1,5 @@
+'use client';
+
 import Button from '@/common/components/button/Button';
 import { ImagesSizes } from '../models/imagesSizes.model';
 import { ButtonTypes } from '@/common/components/button/button.model';
@@ -29,8 +31,9 @@ const RecomedationComponent = ({
   imageSize,
   isResume = false,
 }: IProps) => {
-  const { setRecomendation } = useRecomendationStore();
   const router = useRouter();
+  const { setRecomendation } = useRecomendationStore();
+
   const handleClick = () => {
     setRecomendation({ title, description, imageSize });
     router.push(APP_PATHS.RESUME);
@@ -38,11 +41,17 @@ const RecomedationComponent = ({
 
   return (
     <div className='shadow-soft rounded-3 p-3'>
-      <h2 className='question-title mt-0'>{title}</h2>
+      <h2 id='treatment-name' className='question-title mt-0'>
+        {title}
+      </h2>
       <p className='text-m text-secondary_300'>{description}</p>
       <div className='my-3 flex flex-col items-center'>{images[imageSize]}</div>
       {!isResume && (
-        <Button type={ButtonTypes.SOLID} onClick={handleClick}>
+        <Button
+          id='select-recomendation'
+          type={ButtonTypes.SOLID}
+          onClick={handleClick}
+        >
           Seleccionar
         </Button>
       )}
