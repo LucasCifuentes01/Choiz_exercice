@@ -19,7 +19,7 @@ Para correr los test E2E de cypress seguir los siguientes pasos
 
 Extra steps:
 
-- [ x ] Uso de Tailwind para estilos.
+- [x] Uso de Tailwind para estilos.
 - [ ] Creación de tests unitarios.
-- [ x ] Creación de tests end-to-end (e2e).
-- [ x ] Alojamiento del proyecto en algún servicio en la nube.
+- [x] Creación de tests end-to-end (e2e).
+- [x] Alojamiento del proyecto en algún servicio en la nube.
