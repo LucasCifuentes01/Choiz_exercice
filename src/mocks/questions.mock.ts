@@ -1,7 +1,7 @@
 import {
   IQuestion,
   QuestionTypes,
-} from '@/pages/questions/models/question.model';
+} from '@/modules/questions/models/question.model';
 
 export const mockedQuestions: IQuestion[] = [
   {

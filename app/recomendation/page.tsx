@@ -1,6 +1,6 @@
 'use client';
 
-import RecomendationPage from '@/pages/recomendation/pages/RecomendationPage';
+import RecomendationPage from '@/modules/recomendation/pages/RecomendationPage';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 const Recomendation = () => {

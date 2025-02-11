@@ -1,11 +1,11 @@
 'use client';
 
 import HeaderQuestions from '@/common/components/header-questions/HeaderQuestions';
-import ProgressBar from '@/pages/questions/components/ProgressBar';
-import { useQuestionsStore } from '@/pages/questions/store/questions.store';
-import RecomedationComponent from '@/pages/recomendation/components/RecomedationComponent';
-import { useRecomendationStore } from '@/pages/recomendation/store/recomendation.store';
-import ResumeItems from '@/pages/resume/components/ResumeItems';
+import ProgressBar from '@/modules/questions/components/ProgressBar';
+import { useQuestionsStore } from '@/modules/questions/store/questions.store';
+import RecomedationComponent from '@/modules/recomendation/components/RecomedationComponent';
+import { useRecomendationStore } from '@/modules/recomendation/store/recomendation.store';
+import ResumeItems from '@/modules/resume/components/ResumeItems';
 import { useEffect, useState } from 'react';
 
 const Resume = () => {

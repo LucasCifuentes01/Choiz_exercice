@@ -1,5 +1,5 @@
-import BottomSheet from '@/pages/Welcome/components/BottomSheet';
-import HeaderLogo from '@/pages/Welcome/components/HeaderLogo';
+import BottomSheet from '@/modules/Welcome/components/BottomSheet';
+import HeaderLogo from '@/modules/Welcome/components/HeaderLogo';
 
 export default function Home() {
   return (

@@ -2,9 +2,9 @@
 
 import HeaderQuestions from '@/common/components/header-questions/HeaderQuestions';
 import Loading from '@/common/components/loading/Loading';
-import ProgressBar from '@/pages/questions/components/ProgressBar';
-import { usePostQuestions } from '@/pages/questions/queries';
-import { useQuestionsStore } from '@/pages/questions/store/questions.store';
+import ProgressBar from '@/modules/questions/components/ProgressBar';
+import { usePostQuestions } from '@/modules/questions/queries';
+import { useQuestionsStore } from '@/modules/questions/store/questions.store';
 import { useEffect } from 'react';
 import Faqs from '../components/Faqs';
 import RecomedationComponent from '../components/RecomedationComponent';

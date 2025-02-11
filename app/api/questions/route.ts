@@ -3,7 +3,7 @@ import {
   dutaxidil_gel,
   minoxidil_caps,
 } from '@/mocks/recomendations.mock';
-import { IQuestionComplete } from '@/pages/questions/store/questions.store';
+import { IQuestionComplete } from '@/modules/questions/store/questions.store';
 import { NextResponse } from 'next/server';
 
 export const POST = async (request: Request) => {

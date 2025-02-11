@@ -1,5 +1,5 @@
 import { mockedQuestions } from '@/mocks/questions.mock';
-import { IQuestion } from '@/pages/questions/models/question.model';
+import { IQuestion } from '@/modules/questions/models/question.model';
 import { NextResponse } from 'next/server';
 
 type ResponseData = {
