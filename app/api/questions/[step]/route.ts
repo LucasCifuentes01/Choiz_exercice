@@ -9,10 +9,10 @@ type ResponseData = {
 
 export const GET = async (
   request: Request,
-  params: { params: { step: string } },
+  context: { params: Promise<{ step: string }> },
 ): Promise<NextResponse<ResponseData>> => {
-  console.log('params: ', params);
-  const step = (await params).params.step;
+  const { params } = await context;
+  const step = (await params).step;
 
   const mockedResponse: ResponseData = {
     totalSteps: mockedQuestions.length + 2,
