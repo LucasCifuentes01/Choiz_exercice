@@ -12,7 +12,7 @@ interface IProps {
 
 const TextOption = ({ onChange }: IProps) => {
   const handleChange = (value: string) => {
-    onChange({ id: 'custom', value, optionsType: 'single' });
+    onChange({ id: 'other', value, optionsType: 'multi' });
   };
 
   return (

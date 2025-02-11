@@ -28,9 +28,9 @@ const Question = ({
   const disabledButton = !questions.find((q) => q.step === storeStep)
     ?.selectedOptions.length;
 
-  const showTextOption = questions.find((question) =>
-    question.selectedOptions.find((opt) => opt.id === 'other'),
-  );
+  const showTextOption = questions
+    ?.find((question) => question.step === storeStep)
+    ?.selectedOptions.find((opt) => opt.id === 'other');
 
   const handleContinueClick = () => {
     if (step === totalSteps - 2) {

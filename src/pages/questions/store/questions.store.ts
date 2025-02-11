@@ -38,6 +38,14 @@ export const useQuestionsStore = create<IStore>((set) => ({
             : [{ id, value }];
         }
 
+        if (id === 'other') {
+          const index = options.findIndex((opt) => opt.id === 'other');
+          const newOptions = [...options];
+
+          newOptions[index] = { id, value };
+          return newOptions;
+        }
+
         return options.some((opt) => opt.id === id)
           ? options.filter((opt) => opt.id !== id)
           : [...options, { id, value }];
