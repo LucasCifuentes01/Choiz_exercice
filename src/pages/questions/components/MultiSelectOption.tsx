@@ -16,7 +16,7 @@ interface IProps extends IQuestionOption {
   }) => void;
 }
 
-const SelectableOption = ({
+const MultiSelectOption = ({
   isMultiple,
   label,
   value,
@@ -59,4 +59,4 @@ const SelectableOption = ({
   );
 };
 
-export default SelectableOption;
+export default MultiSelectOption;

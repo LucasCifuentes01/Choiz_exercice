@@ -7,7 +7,7 @@ import {
 import dynamic from 'next/dynamic';
 import SingleOption from './SingleOption';
 
-const SelectableOption = dynamic(() => import('./SelectableOption'));
+const MultiSelectOption = dynamic(() => import('./MultiSelectOption'));
 const TextOption = dynamic(() => import('./TextOption'));
 
 interface IProps extends IQuestions {
@@ -40,7 +40,7 @@ const optionVariants: Record<
   (props: IOptionsProps) => JSX.Element
 > = {
   [QuestionTypes.MULTIPLE]: ({ option, onChangeOption }) => (
-    <SelectableOption
+    <MultiSelectOption
       onSelectOption={onChangeOption}
       key={option.value}
       isMultiple
