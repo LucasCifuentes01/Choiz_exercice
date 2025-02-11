@@ -1,10 +1,18 @@
 interface IProps {
-  onChange: ({ id, value }: { id: string; value: string }) => void;
+  onChange: ({
+    id,
+    value,
+    optionsType,
+  }: {
+    id: string;
+    value: string;
+    optionsType: 'single' | 'multi';
+  }) => void;
 }
 
 const TextOption = ({ onChange }: IProps) => {
   const handleChange = (value: string) => {
-    onChange({ id: 'custom', value });
+    onChange({ id: 'custom', value, optionsType: 'single' });
   };
 
   return (

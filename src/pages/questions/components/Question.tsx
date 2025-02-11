@@ -40,8 +40,22 @@ const Question = ({
     incrementStep();
   };
 
-  const handleChangeOption = ({ id, value }: { id: string; value: string }) => {
-    addQuestion({ id, value, step: storeStep, title });
+  const handleChangeOption = ({
+    id,
+    value,
+    optionsType,
+  }: {
+    id: string;
+    value: string;
+    optionsType?: 'single' | 'multi';
+  }) => {
+    addQuestion({
+      id,
+      value,
+      step: storeStep,
+      title,
+      type: optionsType ?? 'multi',
+    });
   };
 
   return (

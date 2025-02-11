@@ -5,7 +5,15 @@ import { useStepStore } from '../store/step.store';
 
 interface IProps extends IQuestionOption {
   isMultiple?: boolean;
-  onSelectOption: ({ id, value }: { id: string; value: string }) => void;
+  onSelectOption: ({
+    id,
+    value,
+    optionsType,
+  }: {
+    id: string;
+    value: string;
+    optionsType: 'single' | 'multi';
+  }) => void;
 }
 
 const SelectableOption = ({
@@ -22,7 +30,7 @@ const SelectableOption = ({
     ?.selectedOptions.find((opt) => opt.id === value);
 
   const handleSelectOption = () => {
-    onSelectOption({ id: value, value: label });
+    onSelectOption({ id: value, value: label, optionsType: 'multi' });
   };
 
   return (
@@ -44,7 +52,9 @@ const SelectableOption = ({
           </span>
         </label>
       </div>
-      <p className='text-s font-normal text-secondary_600'> {label} </p>
+      <label htmlFor={value} className='text-s font-normal text-secondary_600'>
+        {label}
+      </label>
     </div>
   );
 };

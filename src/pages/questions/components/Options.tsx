@@ -5,17 +5,34 @@ import {
   QuestionTypes,
 } from '../models/question.model';
 import dynamic from 'next/dynamic';
+import SingleOption from './SingleOption';
 
 const SelectableOption = dynamic(() => import('./SelectableOption'));
 const TextOption = dynamic(() => import('./TextOption'));
 
 interface IProps extends IQuestions {
-  onChangeOption: ({ id, value }: { id: string; value: string }) => void;
+  onChangeOption: ({
+    id,
+    value,
+    optionsType,
+  }: {
+    id: string;
+    value: string;
+    optionsType: 'single' | 'multi';
+  }) => void;
 }
 
 interface IOptionsProps {
   option: IQuestionOption;
-  onChangeOption: ({ id, value }: { id: string; value: string }) => void;
+  onChangeOption: ({
+    id,
+    value,
+    optionsType,
+  }: {
+    id: string;
+    value: string;
+    optionsType: 'single' | 'multi';
+  }) => void;
 }
 
 const optionVariants: Record<
@@ -31,7 +48,7 @@ const optionVariants: Record<
     />
   ),
   [QuestionTypes.SINGLE]: ({ option, onChangeOption }) => (
-    <SelectableOption
+    <SingleOption
       key={option.value}
       onSelectOption={onChangeOption}
       {...option}
