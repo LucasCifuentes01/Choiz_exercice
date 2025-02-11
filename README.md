@@ -2,6 +2,8 @@
 
 > Lucas Cifuentes
 
+El ejercicio se encuentra alojado en vercel, se puede acceder a través de: https://choiz-exercice.vercel.app/
+
 Para ejecutar el proyecto en un entorno local se deben seguir lo siguiente pasos:
 
 - Clonar el repo
